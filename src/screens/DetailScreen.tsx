@@ -1,8 +1,11 @@
-import { StackScreenProps } from '@react-navigation/stack'
-import React from 'react'
-import { Image, StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
-import { RootStackParams } from '../navigation/NavigationController'
+import { StackScreenProps } from '@react-navigation/stack';
+import React from 'react';
+import { Image, StyleSheet, Text, View, Dimensions, ScrollView, ActivityIndicator } from 'react-native';
+import { RootStackParams } from '../navigation/NavigationController';
+import Icon  from "react-native-vector-icons/Ionicons";
 import tailwind from 'twrnc';
+import { useMovieDetails } from '../hooks/useMovieDetails';
+import { MovieDetailsComponent } from '../components/MovieDetailsComponent';
 
 const screenHeight = Dimensions.get('screen').height;
 
@@ -12,6 +15,10 @@ export const DetailScreen = ({ route }: Props) => {
 
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie?.poster_path}`;
+
+  const { isLoading, movieDetails, cast} = useMovieDetails( movie.id );
+
+  console.log( movieDetails?.adult );
 
 
   return (
@@ -24,7 +31,19 @@ export const DetailScreen = ({ route }: Props) => {
       </View>
 
       <View style={ tailwind.style('p-1 mx-3') }>
+          <Text style={ tailwind.style('font-bold') }>{ movie.original_title }</Text>
           <Text style={ tailwind.style('font-bold text-2xl') }>{ movie.title }</Text>
+      </View>
+
+      <View style={ tailwind.style('p-1 mx-3 flex flex-row') }> 
+          {
+             isLoading ?
+             <ActivityIndicator color="blue" size={50} style={ tailwind.style('my-5 mx-38') } />
+             : <MovieDetailsComponent 
+                MovieFull={ movieDetails!} 
+                Cast={ cast }
+            />
+          }
       </View>
 
     </ScrollView>
