@@ -23,7 +23,7 @@ export const MovieDetailsComponent = ({ MovieFull, Cast }: Props) => {
             <Icon
                name='star-outline'
                color="gray"
-               size={20}
+               size={25}
             />
             <Text style={tailwind.style('font-bold mx-2')}>{MovieFull.vote_average.toFixed()} / 10</Text>
             <Text style={tailwind.style('font-bold w-64 text-center')}> {MovieFull.genres.map(g => g.name).join(', ')}</Text>

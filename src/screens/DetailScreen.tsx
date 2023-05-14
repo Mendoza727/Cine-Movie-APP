@@ -43,15 +43,15 @@ export const DetailScreen = ({ route, navigation }: Props) => {
         />
       </View>
 
-      <View style={tailwind.style('p-2 mx-3')}>
+      <View style={tailwind.style('p-1 mx-2')}>
         <Text style={tailwind.style('font-bold')}>{movie.original_title}</Text>
         <Text style={tailwind.style('font-bold text-2xl')}>{movie.title}</Text>
       </View>
 
-      <View style={tailwind.style('p-1 mx-3 flex flex-row')}>
+      <View style={tailwind.style('p-1 mx-2 flex flex-row')}>
         {
           isLoading ?
-            <ActivityIndicator color="blue" size={50} style={tailwind.style('my-5 mx-38')} />
+            <ActivityIndicator color="blue" size={50} style={tailwind.style('my-5 mx-34')} />
             : <MovieDetailsComponent
               MovieFull={movieDetails!}
               Cast={cast}
