@@ -1,28 +1,41 @@
-import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
-import { Image, StyleSheet, Text, View, Dimensions, ScrollView, ActivityIndicator } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+
+import { Image, StyleSheet, Text, View, Dimensions, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { RootStackParams } from '../navigation/NavigationController';
-import Icon  from "react-native-vector-icons/Ionicons";
-import tailwind from 'twrnc';
+
 import { useMovieDetails } from '../hooks/useMovieDetails';
 import { MovieDetailsComponent } from '../components/MovieDetailsComponent';
+
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import tailwind from 'twrnc';
 
 const screenHeight = Dimensions.get('screen').height;
 
 interface Props extends StackScreenProps<RootStackParams, 'DetailScreen'> { };
 
-export const DetailScreen = ({ route }: Props) => {
+export const DetailScreen = ({ route, navigation }: Props) => {
 
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie?.poster_path}`;
 
-  const { isLoading, movieDetails, cast} = useMovieDetails( movie.id );
-
-  console.log( movieDetails?.adult );
-
+  const { isLoading, movieDetails, cast } = useMovieDetails(movie.id);
 
   return (
     <ScrollView>
+      {/* boton para regresar */}
+      <View style={styles.backButton}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+        >
+          <Icon
+            color="white"
+            name="arrow-back-outline"
+            size={45}
+          />
+        </TouchableOpacity>
+      </View>
       <View style={styles.imageContainer}>
         <Image
           source={{ uri }}
@@ -30,20 +43,22 @@ export const DetailScreen = ({ route }: Props) => {
         />
       </View>
 
-      <View style={ tailwind.style('p-1 mx-3') }>
-          <Text style={ tailwind.style('font-bold') }>{ movie.original_title }</Text>
-          <Text style={ tailwind.style('font-bold text-2xl') }>{ movie.title }</Text>
+      <View style={tailwind.style('p-2 mx-3')}>
+        <Text style={tailwind.style('font-bold')}>{movie.original_title}</Text>
+        <Text style={tailwind.style('font-bold text-2xl')}>{movie.title}</Text>
       </View>
 
-      <View style={ tailwind.style('p-1 mx-3 flex flex-row') }> 
-          {
-             isLoading ?
-             <ActivityIndicator color="blue" size={50} style={ tailwind.style('my-5 mx-38') } />
-             : <MovieDetailsComponent 
-                MovieFull={ movieDetails!} 
-                Cast={ cast }
+      <View style={tailwind.style('p-1 mx-3 flex flex-row')}>
+        {
+          isLoading ?
+            <ActivityIndicator color="blue" size={50} style={tailwind.style('my-5 mx-38')} />
+            : <MovieDetailsComponent
+              MovieFull={movieDetails!}
+              Cast={cast}
             />
-          }
+        }
+
+
       </View>
 
     </ScrollView>
@@ -66,5 +81,12 @@ const styles = StyleSheet.create({
   },
   imageDetails: {
     flex: 1,
+  },
+  backButton: {
+    position: 'absolute',
+    zIndex: 999,
+    elevation: 9,
+    top: screenHeight * 0.02,
+    left: 20
   }
 });
