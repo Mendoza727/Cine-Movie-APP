@@ -25,33 +25,33 @@ export const MovieDetailsComponent = ({ MovieFull, Cast }: Props) => {
                color="gray"
                size={25}
             />
-            <Text style={tailwind.style('font-bold mx-2')}>{MovieFull.vote_average.toFixed()} / 10</Text>
-            <Text style={tailwind.style('font-bold w-64 text-center')}> {MovieFull.genres.map(g => g.name).join(', ')}</Text>
+            <Text style={tailwind.style('font-bold mx-2 text-gray-800')}>{MovieFull.vote_average.toFixed()} / 10</Text>
+            <Text style={tailwind.style('font-bold w-64 text-center text-gray-800')}> {MovieFull.genres.map(g => g.name).join(', ')}</Text>
          </View>
 
          {/* resume */}
          <View style={tailwind.style('my-4')}>
-            <Text style={tailwind.style('font-bold text-2xl')} >Sinopsis</Text>
-            <Text style={tailwind.style('my-2 p-2')}>{MovieFull.overview || 'No hay informacion reciente'} </Text>
+            <Text style={tailwind.style('font-bold text-2xl text-gray-800')} >Sinopsis</Text>
+            <Text style={tailwind.style('my-2 p-2 text-gray-800')}>{MovieFull.overview || 'No hay informacion reciente'} </Text>
          </View>
 
 
          {/* Presupuesto */}
          <View style={tailwind.style('flex flex-row justify-between')}>
             <View style={tailwind.style('my-1')}>
-               <Text style={tailwind.style('font-bold text-2xl')}>Presupuesto</Text>
-               <Text style={tailwind.style('bg-white rounded-lg shadow-lg text-center p-3 w-40')}>{currencyFormater.format(MovieFull.budget, { code: 'USD' }) || 'no hay informacion'}</Text>
+               <Text style={tailwind.style('font-bold text-2xl text-gray-800')}>Presupuesto</Text>
+               <Text style={tailwind.style('bg-white rounded-lg shadow-lg text-center p-3 w-40 text-gray-800')}>{currencyFormater.format(MovieFull.budget, { code: 'USD' }) || 'no hay informacion'}</Text>
             </View>
             <View style={ tailwind.style('my-1') }>
-               <Text style={ tailwind.style('font-bold text-2xl mx-12') }>Estado</Text>
-               <Text style={tailwind.style('bg-white rounded-lg shadow-lg text-center p-3 w-40')}>{ MovieFull.status }</Text>
+               <Text style={ tailwind.style('font-bold text-2xl mx-12 text-gray-800') }>Estado</Text>
+               <Text style={tailwind.style('bg-white rounded-lg shadow-lg text-center p-3 w-40 text-gray-800')}>{ MovieFull.status }</Text>
             </View>
          </View>
 
 
          {/* casting */}
          <View style={ tailwind.style('my-3')}>
-            <Text style={tailwind.style('font-bold text-2xl mb-4')}>Actores</Text>
+            <Text style={tailwind.style('font-bold text-2xl mb-4 text-gray-800')}>Actores</Text>
             <FlatList 
                data={ Cast }
                keyExtractor={(item) => item.id.toString()}

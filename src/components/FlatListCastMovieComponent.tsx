@@ -29,8 +29,8 @@ export const FlatListCastMovieComponent = ({ Cast }: Props) => {
                     )
                 }
                 <View style={tailwind.style('flex flex-col mx-4')}>
-                    <Text style={tailwind.style('font-bold p-1 mx-1 mb-1 text-center')}>{Cast.name}</Text>
-                    <Text style={tailwind.style('font-bold p-1 mx-1 mb-1 text-center')}>{Cast.character}</Text>
+                    <Text style={tailwind.style('font-bold p-1 mx-1 mb-1 text-center text-gray-800')}>{Cast.name}</Text>
+                    <Text style={tailwind.style('font-bold p-1 mx-1 mb-1 text-center text-gray-800')}>{Cast.character}</Text>
                 </View>
             </View>
         </View>
