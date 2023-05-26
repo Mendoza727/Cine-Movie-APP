@@ -12,7 +12,7 @@ interface Props {
 
 export const FlatListMovies = ({ title, movies }: Props) => {
     return (
-        <View style={[tailwind.style('h-68 my-1'), { height: (title) ? 260 : 220 }]}>
+        <View style={[tailwind.style('h-68 my-1 text-gray-800'), { height: (title) ? 260 : 220 }]}>
             {
                 title && <Text style={tailwind.style('text-2xl font-bold p-2 text-gray-800')}>{ title }</Text>
             }

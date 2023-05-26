@@ -1,10 +1,7 @@
 import React from 'react'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-
+import { Image, StyleSheet,TouchableOpacity, View } from 'react-native';
 
 import { Movie } from '../interfaces/MovieIntefaceData';
-import tailwind from 'twrnc';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 
 interface Props {
@@ -12,7 +9,6 @@ interface Props {
     height?: number;
     width?: number;
 }
-
 
 export const MoviePosterSlice = ({ movie, height = 420 , width = 300 }: Props) => {
 
