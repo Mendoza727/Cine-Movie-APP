@@ -1,3 +1,9 @@
+<div>
+[![React Native](https://img.shields.io/badge/React%20Native-%20-blue.svg)](https://reactnative.dev/)
+[![Android](https://img.shields.io/badge/Android-%20-green.svg)](https://www.android.com/)
+[![iOS](https://img.shields.io/badge/iOS-%20-blue.svg)](https://www.apple.com/ios/)
+</div>
+
 # MovieApp
 
 ## Descripción
