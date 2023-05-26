@@ -1,13 +1,7 @@
 <div id="badges" align="center">
-  <a href="https://reactnative.dev/">
     <img src="https://img.shields.io/badge/React%20Native-%20-blue.svg?style=for-the-badge&logo=react" alt="React Native Badge"/>
-  </a>
-  <a href="https://www.android.com/">
     <img src="https://img.shields.io/badge/Android-%20-green.svg?style=for-the-badge&logo=android" alt="Android Badge" />
-  </a>
-  <a href="https://www.apple.com/ios/">
     <img src="https://img.shields.io/badge/iOS-%20-blue.svg?style=for-the-badge&logo=apple" alt="iOS Badge" />
-  </a>
 </div>
 
 
