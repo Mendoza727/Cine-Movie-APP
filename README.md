@@ -1,8 +1,15 @@
-<div>
-[![React Native](https://img.shields.io/badge/React%20Native-%20-blue.svg)](https://reactnative.dev/)
-[![Android](https://img.shields.io/badge/Android-%20-green.svg)](https://www.android.com/)
-[![iOS](https://img.shields.io/badge/iOS-%20-blue.svg)](https://www.apple.com/ios/)
+<div id="badges" align="center">
+  <a href="https://reactnative.dev/">
+    <img src="https://img.shields.io/badge/React%20Native-blue.svg?style=for-the-badge" alt="React Native Badge"/>
+  </a>
+  <a href="https://www.android.com/">
+    <img src="https://img.shields.io/badge/Android-green.svg?style=for-the-badge" alt="Android Badge" />
+  </a>
+  <a href="https://www.apple.com/ios/">
+    <img src="https://img.shields.io/badge/iOS-blue.svg?style=for-the-badge" alt="iOS Badge" />
+  </a>
 </div>
+
 
 # MovieApp
 
