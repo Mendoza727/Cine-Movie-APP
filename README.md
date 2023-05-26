@@ -47,7 +47,7 @@ Ejecuta la aplicación en tu entorno de desarrollo de la siguente manera:
 - [Snap Carousel](https://github.com/archriss/react-native-snap-carousel) es una librería de React Native que proporciona un componente de carrusel deslizante con una funcionalidad de "snap" suave.
 
 ### Currency Formatter
-- [Currency Formatter](https://github.com/s-yadav/react-currency-formatter) es una librería de React que facilita el formateo de valores numéricos en formatos de moneda.
+- [Currency Formatter](https://github.com/smirzaei/currency-formatter#readme) es una librería de React que facilita el formateo de valores numéricos en formatos de moneda.
 
 ### Image Color (En revisión por errores)
 - Image Color es una librería que está actualmente en revisión debido a errores de funcionamiento. Se espera que se solucionen pronto para poder utilizarla correctamente en la aplicación.
